@@ -3,7 +3,8 @@ require "json"
 
 class GifBot < Sinatra::Base
   post "/" do
+    search_term = params[:text].gsub(params[:trigger_word], "").trim
     content_type :json
-    { text: "hello" }.to_json
+    { text: search_term }.to_json
   end
 end
