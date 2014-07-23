@@ -4,7 +4,10 @@ require "json"
 class GifBot < Sinatra::Base
   post "/" do
     search_term = params[:text].gsub(params[:trigger_word], "").strip
+    gifs = Giphy.search(search_term)
+    random_gif = gifs.sample
+
     content_type :json
-    { text: search_term }.to_json
+    { text: random_gif.original_image.url }.to_json
   end
 end

@@ -1,7 +1,23 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.6)
+    faraday (0.8.9)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
+    faraday_middleware-parse_oj (0.2.1)
+      faraday_middleware (~> 0.8)
+      oj (~> 2.0)
+    giphy (1.1.1)
+      faraday (~> 0.8.8)
+      faraday_middleware-parse_oj (~> 0.2.1)
+      launchy (~> 2.4.2)
     kgio (2.9.2)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    multipart-post (1.2.0)
+    oj (2.9.9)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -20,5 +36,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  giphy
   sinatra
   unicorn
